@@ -1,56 +1,91 @@
 package com.cts.quizmodule.dto;
 
 import java.util.Map;
+
+
 import java.util.UUID;
 
+import org.springframework.validation.annotation.Validated;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.validation.constraints.NotNull;
+
+
+@Validated
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class QuizResponse {
-	private String quizId;
 	
-    private String userId;
+	@NotNull(message="give proper uuid")
+	private UUID quizId;
 	
-	private Map<String, String> selectedOptions;
+	
+	@NotNull(message="userId must be UUID")
+    private UUID userId;
+	//@Pattern(regexp = "[ABC]", message = "optionA should be one of the following characters: A, B, C")
+	private Map<UUID, String> selectedOptions;
+	
+	
 
 	/**
 	 * @return the quizId
 	 */
-	public String getQuizId() {
+	public UUID getQuizId() {
 		return quizId;
 	}
 
 	/**
 	 * @param quizId the quizId to set
 	 */
-	public void setQuizId(String quizId) {
+	public void setQuizId(UUID quizId) {
 		this.quizId = quizId;
 	}
 
+	
 	/**
 	 * @return the userId
 	 */
-	public String getUserId() {
+	public UUID getUserId() {
 		return userId;
 	}
 
 	/**
 	 * @param userId the userId to set
 	 */
-	public void setUserId(String userId) {
+	public void setUserId(UUID userId) {
 		this.userId = userId;
 	}
 
 	/**
 	 * @return the selectedOptions
 	 */
-	public Map<String, String> getSelectedOptions() {
+	public Map<UUID, String> getSelectedOptions() {
 		return selectedOptions;
 	}
 
 	/**
 	 * @param selectedOptions the selectedOptions to set
 	 */
-	public void setSelectedOptions(Map<String, String> selectedOptions) {
+	public void setSelectedOptions(Map<UUID, String> selectedOptions) {
 		this.selectedOptions = selectedOptions;
 	}
+
+//	/**
+//	 * @return the selectedOptions
+//	 */
+//	public Map<String, String> getSelectedOptions() {
+//		return selectedOptions;
+//	}
+//
+//	/**
+//	 * @param selectedOptions the selectedOptions to set
+//	 */
+//	public void setSelectedOptions(Map<String, String> selectedOptions) {
+//		this.selectedOptions = selectedOptions;
+//	}
+	
+	
+	
 	
 	
 	

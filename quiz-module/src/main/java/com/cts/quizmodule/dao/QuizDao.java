@@ -9,5 +9,8 @@ import com.cts.quizmodule.model.Quiz;
 
 @Repository
 public interface QuizDao extends JpaRepository<Quiz,String>{
+	
+	boolean existsByTitle(String title);
+	boolean existsByCourseId(String courseId);
 
 }

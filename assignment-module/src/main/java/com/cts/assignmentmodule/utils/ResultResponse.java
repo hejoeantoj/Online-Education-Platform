@@ -1,15 +1,6 @@
-package com.cts.quizmodule.utils;
-
-import java.time.LocalDateTime;
+package com.cts.assignmentmodule.utils;
 
 import org.springframework.http.HttpStatus;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import lombok.Builder;
-import lombok.Data;
- 
- 
 
 public class ResultResponse<T> {
  
@@ -53,23 +44,13 @@ public class ResultResponse<T> {
 	public void setData(T data) {
 		this.data = data;
 	}
-	/**
-	 * @return the status
-	 */
-	public HttpStatus getStatus() {
-		return status;
-	}
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(HttpStatus status) {
-		this.status = status;
-	}
-	public ResultResponse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	 public HttpStatus getStatus() {
+	        return status;
+	    }
+
+	    public void setStatus(HttpStatus status) {
+	        this.status = status;
+	    }
 	
-    
-    
+	
 }

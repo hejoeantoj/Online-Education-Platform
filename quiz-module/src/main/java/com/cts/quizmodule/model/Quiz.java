@@ -30,10 +30,10 @@ public class Quiz {
     
     
     @JsonIgnore
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Question> questions = new ArrayList<>();
     
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<QuizSubmission> submission = new ArrayList<>();
 
     // Getters and setters

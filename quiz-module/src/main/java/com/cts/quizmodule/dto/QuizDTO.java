@@ -1,26 +1,43 @@
 package com.cts.quizmodule.dto;
 
+import java.util.UUID;
 
+import org.springframework.validation.annotation.Validated;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@Validated
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class QuizDTO {
 	
 	
-	private String quizId;
-    private String courseId;
+	private UUID quizId;
+	
+	@NotNull
+    private UUID courseId;
+	
+	@NotNull(message = "give proper name for column")
+	@NotBlank(message="give value")
 	private String title;
-	private int totalMarks;
+	
+	@NotNull
+	private Integer totalMarks;
 	
 	
 	
 	/**
 	 * @return the courseId
 	 */
-	public String getCourseId() {
+	public UUID getCourseId() {
 		return courseId;
 	}
 	/**
 	 * @param courseId the courseId to set
 	 */
-	public void setCourseId(String courseId) {
+	public void setCourseId(UUID courseId) {
 		this.courseId = courseId;
 	}
 	/**
@@ -38,25 +55,25 @@ public class QuizDTO {
 	/**
 	 * @return the totalMarks
 	 */
-	public int getTotalMarks() {
+	public Integer getTotalMarks() {
 		return totalMarks;
 	}
 	/**
 	 * @param totalMarks the totalMarks to set
 	 */
-	public void setTotalMarks(int totalMarks) {
+	public void setTotalMarks(Integer totalMarks) {
 		this.totalMarks = totalMarks;
 	}
 	/**
 	 * @return the quizId
 	 */
-	public String getQuizId() {
+	public UUID getQuizId() {
 		return quizId;
 	}
 	/**
 	 * @param quizId the quizId to set
 	 */
-	public void setQuizId(String quizId) {
+	public void setQuizId(UUID quizId) {
 		this.quizId = quizId;
 	}
 	

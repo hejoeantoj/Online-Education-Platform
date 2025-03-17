@@ -4,6 +4,7 @@ package com.cts.quizmodule.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.hibernate.validator.constraints.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,11 +27,13 @@ public class QuestionService {
 
     public Question createQuestion(QuestionDTO questionDTO)throws QuizNotFoundException,DuplicateQuestionException
     {
-    	
+    	 if (questionDTO.getQuestionText() == null || questionDTO.getQuestionText().trim().isEmpty()) {
+    	        throw new IllegalArgumentException("Question text cannot be null / empty");
+    	 }
     	
         Question question = new Question();
-        Quiz quiz = quizDao.findById(questionDTO.getQuizId())
-                .orElseThrow(() -> new QuizNotFoundException("quiz not found"));
+        Quiz quiz = quizDao.findById(questionDTO.getQuizId().toString())
+                .orElseThrow(() -> new QuizNotFoundException("quiz not found to create new question"));
         boolean exists = questionDao.findByQuizQuizId(quiz.getQuizId()).stream()
                 .anyMatch(q -> q.getQuestionText().equalsIgnoreCase(questionDTO.getQuestionText()));
         
@@ -52,42 +55,11 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return questionDao.findAll();
     }
-    
-    //viewing questions by quizId
-
-    public List<Question> getAllQuestionsById(String quizId) {
+  
+    public List<Question> getAllQuestionsById(String quizId) throws QuizNotFoundException {
+    	
+    	Quiz quiz = quizDao.findById(quizId)
+                .orElseThrow(() -> new QuizNotFoundException("Quiz not found to create new question"));
         return questionDao.findByQuizQuizId(quizId);
     }
-    
-    
-//    public List<Question> addOrUpdateQuestionsToQuiz(String quizId, List<QuestionDTO> questionDTOs) throws QuizNotFoundException {
-//        Quiz quiz = quizDao.findById(quizId)
-//                .orElseThrow(() -> new QuizNotFoundException("Quiz not found"));
-//        
-//        List<Question> questions = questionDTOs.stream()
-//                .map(dto -> mapToQuestion(dto, quiz))
-//                .collect(Collectors.toList());
-//        
-//        questionDao.saveAll(questions);
-//        
-//        // Update total marks based on the number of questions
-//        int totalMarks = questionDao.findByQuizQuizId(quizId).size();
-//        quiz.setTotalMarks(totalMarks);
-//        quizDao.save(quiz);
-//        
-//        return questionDao.findByQuizQuizId(quizId);
-//    }
-//
-//    private Question mapToQuestion(QuestionDTO questionDTO, Quiz quiz) {
-//        Question question = new Question();
-//        question.setOptionA(questionDTO.getOptionA());
-//        question.setOptionB(questionDTO.getOptionB());
-//        question.setOptionC(questionDTO.getOptionC());
-//        question.setQuestionText(questionDTO.getQuestionText());
-//        question.setCorrectAnswer(questionDTO.getCorrectAnswer());
-//        question.setQuiz(quiz);
-//        return question;
-//    }
-//    
-    
-}
+  }

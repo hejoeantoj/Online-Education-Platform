@@ -16,6 +16,7 @@ import com.cts.quizmodule.model.Question;
 import com.cts.quizmodule.service.QuestionService;
 import com.cts.quizmodule.utils.ResultResponse;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -30,8 +31,8 @@ public class QuestionController {
      * Method for Creating Questions for that particular Quiz Id
      * In questionDto itself we're having quiz id
      */
-    @PostMapping("/quizzes/quizId/createQuestion")
-    public ResponseEntity<ResultResponse<Question>> createQuestion(@RequestBody QuestionDTO question) {
+    @PostMapping("quizzes/createQuestion")
+    public ResponseEntity<ResultResponse<Question>> createQuestion(@Valid @RequestBody QuestionDTO question) {
         ResultResponse<Question> response = new ResultResponse<>();
         try {
             Question createdQuestion = questionService.createQuestion(question);
@@ -42,12 +43,12 @@ public class QuestionController {
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (DuplicateQuestionException e) {
             response.setSuccess(false);
-            response.setMessage(e.getMessage());
-            response.setStatus(HttpStatus.CONFLICT);
-            return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+            response.setMessage("can't create duplicate question ");
+            response.setStatus(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         } catch (QuizNotFoundException e) {
             response.setSuccess(false);
-            response.setMessage(e.getMessage());
+            response.setMessage("cant find quiz id to create a question");
             response.setStatus(HttpStatus.NOT_FOUND);
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         } catch (Exception e) {
@@ -61,6 +62,7 @@ public class QuestionController {
     /*
      * Method for Viewing all Questions for that Particular Quiz Id
      */
+    
     @GetMapping("quizzes/getAllQuestions")
     public ResponseEntity<ResultResponse<List<Question>>> getAllQuestions() {
         ResultResponse<List<Question>> response = new ResultResponse<>();
@@ -82,11 +84,11 @@ public class QuestionController {
     /*
      * "API" to view all questions by quiz id
      */
-    @PostMapping("quizzes/quizId/viewQuestionsByQuizId")
-    public ResponseEntity<ResultResponse<List<Question>>> getAllQuestionsById(@RequestBody QuestionDTO questionDTO) {
+    @GetMapping("quizzes/viewQuestionsByQuizId")
+    public ResponseEntity<ResultResponse<List<Question>>> getAllQuestionsById( @RequestBody QuestionDTO questionDTO) {
         ResultResponse<List<Question>> response = new ResultResponse<>();
         try {
-            List<Question> questions = questionService.getAllQuestionsById(questionDTO.getQuizId());
+            List<Question> questions = questionService.getAllQuestionsById(questionDTO.getQuizId().toString());
             response.setSuccess(true);
             response.setMessage("Questions retrieved successfully");
             response.setData(questions);
@@ -96,7 +98,7 @@ public class QuestionController {
             response.setSuccess(false);
             response.setMessage("quiz not found for given quiz id");
             response.setStatus(HttpStatus.NOT_FOUND);
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             response.setSuccess(false);
             response.setMessage("error occurred while retrieving values");

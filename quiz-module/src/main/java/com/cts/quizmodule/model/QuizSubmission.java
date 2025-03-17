@@ -53,12 +53,16 @@ public class QuizSubmission {
     
 
 	
-    /**
+	
+	/**
 	 * @return the userId
 	 */
 	public String getUserId() {
 		return userId;
 	}
+
+
+
 
 	/**
 	 * @param userId the userId to set
@@ -66,7 +70,10 @@ public class QuizSubmission {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
+
+
+
+
 	public Quiz getQuiz() {
 		return quiz;
 	}
