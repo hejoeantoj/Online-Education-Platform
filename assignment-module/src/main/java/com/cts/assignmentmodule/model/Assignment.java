@@ -49,10 +49,18 @@ public class Assignment {
 		return question;
 	}
 
+
+	/**
+	 * @param question the question to set
+	 */
 	public void setQuestion(String question) {
 		this.question = question;
 	}
 
+
+	/**
+	 * @return the totalMarks
+	 */
 	public int getTotalMarks() {
 		return totalMarks;
 	}
@@ -69,6 +77,16 @@ public class Assignment {
 		this.submissions = submissions;
 	}
     
+	public Assignment(int assignmentId, int courseId, Set<Submission> submissions, String question, int totalMarks,
+			LocalDateTime createdAt) {
+		super();
+		this.assignmentId = assignmentId;
+		this.courseId = courseId;
+		this.submissions = submissions;
+		this.question = question;
+		this.totalMarks = totalMarks;
+		this.createdAt = createdAt;
+	}
+    public Assignment() {}
     
-   
 }
