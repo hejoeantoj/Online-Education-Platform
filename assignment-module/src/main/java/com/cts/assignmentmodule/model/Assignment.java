@@ -1,21 +1,19 @@
 package com.cts.assignmentmodule.model;
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
+
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 @Entity
 public class Assignment {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, unique = true)
-    private int assignmentId;
 
-    @Column(nullable = false)
-    private int courseId;
+    @Id
+    private String assignmentId;
 
-    @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Submission> submissions = new HashSet<>();
+    @Column(name = "courseId", nullable = false)
+    private String courseId;
 
     @Column(nullable = false)
     private String question;
@@ -23,75 +21,34 @@ public class Assignment {
     @Column(nullable = false)
     private int totalMarks;
 
-    private LocalDateTime createdAt;
-    
-    /**
-	 * @return the createdAt
-	 */
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
+    @OneToMany(mappedBy = "assignment", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<AssignmentSubmission> submissions ;
 
-	/**
-	 * @param createdAt the createdAt to set
-	 */
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	@PrePersist
-    public void generateCreatedAt() {
-        this.createdAt = LocalDateTime.now();
+    @PrePersist
+    public void generateAssignmentId() {
+        this.assignmentId = UUID.randomUUID().toString();
     }
 
-	/**
-	 * @return the assignmentId
-	 */
-	public int getAssignmentId() {
+	public String getAssignmentId() {
 		return assignmentId;
 	}
 
-	/**
-	 * @param assignmentId the assignmentId to set
-	 */
-	public void setAssignmentId(int assignmentId) {
+	public void setAssignmentId(String assignmentId) {
 		this.assignmentId = assignmentId;
 	}
 
-	/**
-	 * @return the courseId
-	 */
-	public int getCourseId() {
+	public String getCourseId() {
 		return courseId;
 	}
 
-	/**
-	 * @param courseId the courseId to set
-	 */
-	public void setCourseId(int courseId) {
+	public void setCourseId(String courseId) {
 		this.courseId = courseId;
 	}
 
-	/**
-	 * @return the submissions
-	 */
-	public Set<Submission> getSubmissions() {
-		return submissions;
-	}
-
-	/**
-	 * @param submissions the submissions to set
-	 */
-	public void setSubmissions(Set<Submission> submissions) {
-		this.submissions = submissions;
-	}
-
-	/**
-	 * @return the question
-	 */
 	public String getQuestion() {
 		return question;
 	}
+
 
 	/**
 	 * @param question the question to set
@@ -100,6 +57,7 @@ public class Assignment {
 		this.question = question;
 	}
 
+
 	/**
 	 * @return the totalMarks
 	 */
@@ -107,12 +65,18 @@ public class Assignment {
 		return totalMarks;
 	}
 
-	/**
-	 * @param totalMarks the totalMarks to set
-	 */
 	public void setTotalMarks(int totalMarks) {
 		this.totalMarks = totalMarks;
 	}
+
+	public List<AssignmentSubmission> getSubmissions() {
+		return submissions;
+	}
+
+	public void setSubmissions(List<AssignmentSubmission> submissions) {
+		this.submissions = submissions;
+	}
+    
 	public Assignment(int assignmentId, int courseId, Set<Submission> submissions, String question, int totalMarks,
 			LocalDateTime createdAt) {
 		super();
