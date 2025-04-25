@@ -1,0 +1,234 @@
+/* src/components/HeaderCombined.css */
+
+/* Header.css */
+.header-container {
+  display: flex; /* Enable flexbox for alignment */
+  align-items: center; /* Vertically align items in the header */
+  justify-content: space-between; /* Distribute space between elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px; /* Add some padding around the header */
+}
+
+.app-name {
+  margin-right: 20px;
+  font-weight: bold;
+  color: blue; /* Added the inline style's color here */
+}
+
+.nav-links-left {
+  display: flex; /* Align home and profile horizontally */
+  align-items: center;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  margin-right: 15px; /* Space between home and other icons */
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* ProfileDropdown.css */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* margin-left: 600px; Removed this to control position with flexbox */
+}
+
+.profile-image {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.profile-text {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 5px;
+  min-width: 240px;
+  padding: 10px;
+}
+
+.profile-menu .user-info {
+  margin-bottom: 10px;
+}
+
+.profile-menu .user-info p {
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-menu .user-info p i {
+  margin-right: 8px;
+  color: #007bff; /* Example icon color */
+}
+
+.profile-menu .user-info p span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.profile-menu .logout-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-menu .logout-button i {
+  margin-right: 8px;
+}
+
+.profile-menu .logout-button:hover {
+  background-color: #c82333;
+}
+
+/* NotificationDropdown.css */
+.notification-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px; /* Space between profile and notifications */
+}
+
+.notification-button {
+  position: relative;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  background: none; /* Remove button background */
+  border: none;     /* Remove button border */
+}
+
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.notifications-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  width: 320px;
+  z-index: 10;
+  font-size: 0.95em;
+}
+
+.notifications-panel h4 {
+  color: #212529;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.notification-item {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: #e0e0e0;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.no-notifications {
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Search.css */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  margin: 0 15px; /* Keep some margin around the search bar */
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 8px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 25px; /* For rounded-pill effect */
+  margin-right: 8px;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.search-button {
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  color: #0056b3;
+}
+
+.search-icon {
+  font-size: 1rem;
+}
+
+/* Adjustments for Header.js to use flexbox */
+.container-fluid.d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.d-flex.align-items-center { /* This targets the right side icons */
+  display: flex;
+  align-items: center;
+}

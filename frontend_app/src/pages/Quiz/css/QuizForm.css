@@ -1,0 +1,67 @@
+/* CreateQuizForm.css */
+.create-quiz-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.create-quiz-form h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.create-quiz-form p {
+    text-align: center;
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.create-quiz-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.create-quiz-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.create-quiz-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.create-quiz-form button:hover {
+    background-color: #0056b3;
+}
+
+.create-quiz-form button.cancel {
+    background-color: #dc3545;
+}
+
+.create-quiz-form button.cancel:hover {
+    background-color: #a71d2a;
+}

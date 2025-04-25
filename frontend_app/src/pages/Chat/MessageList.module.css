@@ -1,0 +1,13 @@
+/* src/components/Chat/MessageList.module.css */
+.messageListContainer {
+    flex-grow: 1; /* Takes up available space */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    min-height: 300px; /* Or adjust as needed */
+    max-height: 500px; /* Set a max height */
+    background-color: #f8f9fa; /* Light background for the chat area */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+  }

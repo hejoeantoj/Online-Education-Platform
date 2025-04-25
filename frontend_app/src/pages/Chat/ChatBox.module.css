@@ -1,0 +1,71 @@
+/* src/components/Chat/ChatBox.module.css */
+.chatBoxContainer {
+  display: flex;
+  flex-direction: column;
+  /* height: 80vh; */
+  /* Removed the fixed height: height: 80vh; */
+  width: 100%; /* Or set a specific width */
+  max-width: 800px; /* Limit maximum width */
+  margin: 20px auto; /* Center the chat box */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 15px;
+  box-sizing: border-box; /* Include padding in width/height */
+  /* Ensure message area takes up available space and scrolls */
+  /* min-height: 400px; /* Optional: Set a minimum height if needed */
+}
+
+.chatHeader {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.4em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.refreshButton {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Position to the right */
+  font-size: 0.9em;
+}
+
+.refreshButton:hover {
+  background-color: #5a6268;
+}
+
+.refreshButton:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.statusMessage {
+  text-align: center;
+  color: #6c757d;
+  padding: 20px;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #dc3545; /* Bootstrap danger color */
+  background-color: #f8d7da; /* Light red background */
+  border: 1px solid #f5c6cb; /* Red border */
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Style for the message list container */
+.messageListContainer {
+  flex-grow: 1; /* Allows the message list to take up the remaining vertical space */
+  overflow-y: auto; /* Enables scrolling for the messages */
+  padding-bottom: 10px; /* Add some padding at the bottom for better visual spacing */
+}

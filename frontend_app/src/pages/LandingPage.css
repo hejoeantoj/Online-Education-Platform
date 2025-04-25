@@ -1,0 +1,45 @@
+.landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assests/login.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: auto;
+  }
+  
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login {
+    background-color: #788779;
+    color: white;
+  }
+  
+  .login:hover {
+    background-color: #45a049;
+  }
+  
+  .register {
+    background-color: #008CBA;
+    color: white;
+  }
+  
+  .register:hover {
+    background-color: #007bb5;
+  }
+  

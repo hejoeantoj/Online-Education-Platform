@@ -1,0 +1,62 @@
+/* src/components/Chat/MessageItem.module.css */
+.messageRow {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .currentUserRow {
+    justify-content: flex-end; /* Aligns bubble to the right */
+  }
+  
+  .otherUserRow {
+    justify-content: flex-start; /* Aligns bubble to the left */
+  }
+  
+  .messageBubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word; /* Prevents long words from overflowing */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .currentUserMessage {
+    background-color: #007bff; /* Example: Blue for current user */
+    color: white;
+    border-bottom-right-radius: 5px; /* Slightly different shape */
+  }
+  
+  .otherUserMessage {
+    background-color: #e9ecef; /* Example: Light grey for others */
+    color: #333;
+    border-bottom-left-radius: 5px; /* Slightly different shape */
+  }
+  
+  .senderName {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: #555; /* Slightly muted color for sender name */
+  }
+  
+  .messageContent {
+    font-size: 0.95em;
+    line-height: 1.4;
+  }
+  
+  .timestamp {
+    font-size: 0.75em;
+    color: inherit; /* Inherits color from bubble (light for current user, dark for others) */
+    opacity: 0.8;
+    text-align: right;
+    margin-top: 5px;
+  }
+  
+  /* Ensure timestamp color contrasts well */
+  .currentUserMessage .timestamp {
+      color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .otherUserMessage .timestamp {
+      color: #6c757d;
+  }

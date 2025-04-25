@@ -1,0 +1,50 @@
+/* QuizInfoPopup.css */
+.quiz-info-popup {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #e3f2fd; /* Light blue background */
+    border: 1px solid #90caf9; /* Matching border color */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.quiz-info-popup h2 {
+    font-size: 24px;
+    color: #1a237e; /* Darker blue for the title */
+    margin-bottom: 15px;
+}
+
+.quiz-info-popup p {
+    font-size: 16px;
+    color: #424242; /* Neutral color for text */
+    margin: 10px 0;
+    display: flex;
+    align-items: center; /* Align the icon and text */
+    justify-content: center; /* Center both */
+    gap: 2px; /* Add space between the icon and text */
+}
+
+.quiz-info-popup .time-icon {
+    width: 20px;
+    height: 20px;
+    fill: coral; /* Icon color */
+}
+
+.quiz-info-popup button {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-info-popup button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,71 @@
+/* StudentReport.css */
+
+.student-report-container {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .student-report-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .report-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+  
+  .report-section h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .report-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .report-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+  .report-section li:last-child {
+    border-bottom: none;
+  }
+  
+  .chart-container {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 15px auto;
+  }
+  
+  .completion-status p {
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe0e0;
+    border: 1px solid #ffb3b3;
+    border-radius: 6px;
+  }
+  
+  .loading-message {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+  }

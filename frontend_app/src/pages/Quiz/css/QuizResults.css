@@ -1,0 +1,52 @@
+/* QuizResults.css */
+.quiz-result-card {
+    max-width: 600px; /* Optimal width for the card */
+    margin: 50px auto; /* Center the card on the page */
+    padding: 30px; /* Generous padding for spacious layout */
+    background-color: #e3f2fd; /* Light blue background for elegance */
+    border: 1px solid #90caf9; /* Subtle border matching the theme */
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Strong shadow for depth */
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    text-align: center; /* Center-align all text */
+}
+
+.card-title {
+    font-size: 28px; /* Prominent heading size */
+    font-weight: bold;
+    color: #1a237e; /* Dark blue text for professionalism */
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-size: 20px; /* Larger font for results */
+    font-weight: 500;
+    color: #424242; /* Neutral text color */
+    margin: 10px 0; /* Space between text elements */
+}
+
+.card-text span {
+    font-weight: bold;
+    color: #007bff; /* Highlight scores and percentages in blue */
+}
+
+.card button {
+    margin-top: 20px; /* Space above the button */
+    padding: 12px 20px; /* Spacious button dimensions */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745; /* Green for a positive action */
+    border: none;
+    border-radius: 8px; /* Rounded corners for smoothness */
+    color: white; /* White text for contrast */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Subtle zoom effect for interactivity */
+}

@@ -1,0 +1,220 @@
+/* StudentCourseDetails.module.css */
+
+.courseDetailsContainer {
+  display: flex;
+  padding: 20px;
+  background-color: rgba(201, 201, 253, 0.8);
+  min-height: 200vh; /* Full height */
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  margin-right: 20px;
+  padding: 15px;
+  border-right: 1px solid #f4ecece4;
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  margin-bottom: 10px;
+}
+
+.navButton {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border: none; /* Remove default button border */
+}
+
+.activeButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.inactiveButton {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #ddd;
+}
+
+.dropdownList {
+  list-style: none;
+  padding: 0;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.dropdownItem {
+  padding: 5px 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdownItem.active {
+  background-color: #e6f7ff;
+}
+
+.dropdownLink {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/*
+.StudentCourseDetails_courseDetailsContainer__-10Mi {
+  display: flex;
+  padding: 20px;
+  background-color: #7cb7f3;
+} */
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: rgba(197, 197, 214, 0.8);
+  /* Ensure mainContent can contain other block-level elements */
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.lessonContent,
+.assignmentView,
+.quizView {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lessonContent h3,
+.assignmentView h3,
+.quizView h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.assignmentItem {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.assignmentItem:last-child {
+  border-bottom: none;
+}
+
+.submittedAssignment {
+  color: green;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+/* Styles for the ChatBox wrapper */
+.chatBoxContainerWrapper {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styles for the Report wrapper */
+.reportContainerWrapper {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.enrollmentInfo {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.enroll-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.enroll-button:hover {
+  background-color: #218838;
+}
+
+.back-to-dashboard-button {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.back-to-dashboard-button:hover {
+  background-color: #e7f3ff;
+}
+
+
+.dropdownItem {
+  padding: 5px 0;
+  cursor: pointer;
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove any borders */
+}
+
+.dropdownItem.active {
+  background-color: #e6f7ff; /* Keep the active state styling if desired */
+}
+
+.dropdownLink {
+  text-decoration: none;
+  color: #333;
+  display: block; /* Keep as block for easy click targeting */
+  padding: 5px 15px; /* Add some padding for better touch/click area */
+}
+
+.dropdownLink:hover {
+  background-color: #f0f0f0; /* Add a subtle hover effect if you like */
+}

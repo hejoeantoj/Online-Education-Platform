@@ -1,0 +1,201 @@
+/* AssignmentPopup.css */
+
+/* Optional Overlay for the popup */
+.assignment-popup-overlay {
+    position: fixed; /* Or absolute if needed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    padding: 20px;
+  }
+  
+  /* Main popup container */
+  .assignment-popup-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Adjust as needed */
+    width: 100%;
+    position: relative; /* Needed for absolute positioning of close button */
+    max-height: 90vh; /* Limit height and allow scrolling if needed */
+    overflow-y: auto; /* Add scroll for tall content */
+  }
+  
+  .assignment-popup-content.loading {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+  }
+  .close-button:hover {
+    color: #333;
+  }
+  
+  /* Assignment Details Section */
+  .assignment-details h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.4rem;
+  }
+  .assignment-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .assignment-details strong {
+    color: #444;
+  }
+  
+  /* Divider Line */
+  .divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
+  }
+  
+  /* Upload Form Section */
+  .assignment-upload-form h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .file-input-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input and file name */
+  }
+  
+  .file-input {
+    display: block; /* Or inline-block */
+    /* Add more specific styling if needed */
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .file-input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  .file-name {
+      font-size: 0.9rem;
+      color: #666;
+      font-style: italic;
+  }
+  
+  /* General Button Styling */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    margin-right: 10px; /* Spacing between buttons if needed */
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  /* Upload Button Specifics */
+  .upload-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+  }
+  .upload-button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  .upload-button:disabled {
+     background-color: #a0cfff; /* Lighter blue when disabled */
+  }
+  
+  /* Success Indicator */
+  .upload-success-indicator {
+    color: green;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    color: #dc3545; /* Red */
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Result Section */
+  .assignment-result-section {
+    margin-top: 20px;
+  }
+  
+  .view-result-button {
+    background-color: #28a745; /* Green */
+    color: white;
+  }
+  .view-result-button:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  .view-result-button:disabled {
+     background-color: #94dca5; /* Lighter green when disabled */
+  }
+  
+  /* Result Display Area */
+  .result-display {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+  }
+  
+  .result-display h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .result-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  .result-details strong {
+      color: #222;
+  }
+  
+  /* Info Message Styling (e.g., "No result yet", "Please upload first") */
+  .info-message {
+    color: #6c757d; /* Grey */
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }

@@ -1,0 +1,83 @@
+/* QuizDetails.css */
+.quiz-details-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for clarity */
+    border-radius: 10px; /* Rounded edges for smoothness */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.quiz-details-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a237e; /* Dark blue */
+    margin-bottom: 30px;
+}
+
+.quiz-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.quiz-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #007bff; /* Highlighted blue title */
+    margin-bottom: 10px;
+}
+
+.quiz-description {
+    font-size: 16px;
+    color: #495057; /* Neutral gray for description */
+    margin-bottom: 15px;
+}
+
+.quiz-card button {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745; /* Green for positive action */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quiz-card button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d; /* Neutral button color for "Previous Page" */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5a6268; /* Darker neutral on hover */
+    transform: scale(1.05);
+}

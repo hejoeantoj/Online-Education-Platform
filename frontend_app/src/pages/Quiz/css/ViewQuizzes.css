@@ -1,0 +1,113 @@
+/* ViewQuizzes.css */
+.view-quizzes-container {
+    max-width: 1200px; /* Center the layout */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for clarity */
+    border-radius: 10px; /* Smooth rounded edges */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.view-quizzes-container h2 {
+    font-size: 32px; /* Bold heading size */
+    font-weight: bold;
+    color: #1a237e; /* Dark blue for emphasis */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.message {
+    font-size: 18px;
+    color: #28a745; /* Green for success messages */
+    margin-bottom: 20px;
+}
+
+.quiz-list {
+    display: flex;
+    flex-wrap: wrap; /* Wrap quiz cards for responsiveness */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+}
+
+.quiz-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for clarity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+    width: calc(33.33% - 20px); /* Dynamic width for responsiveness */
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.quiz-card h3 {
+    font-size: 22px; /* Larger title font size */
+    font-weight: bold;
+    color: #007bff; /* Blue for emphasis */
+    margin-bottom: 10px;
+}
+
+.quiz-card p {
+    font-size: 16px; /* Neutral font size */
+    color: #495057; /* Subtle gray text */
+}
+
+.quiz-card button {
+    margin-top: 10px; /* Space above button */
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745; /* Green for positive action */
+    border: none;
+    border-radius: 5px; /* Smooth rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quiz-card button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.create-quiz-button {
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Blue button for creating quizzes */
+    border: none;
+    border-radius: 8px; /* Smooth rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-quiz-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.back-button {
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #6c757d; /* Neutral button color for "Back" */
+    border: none;
+    border-radius: 8px; /* Smooth rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268; /* Darker neutral color */
+    transform: scale(1.05);
+}

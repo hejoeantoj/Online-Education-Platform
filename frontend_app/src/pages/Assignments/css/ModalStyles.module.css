@@ -1,0 +1,257 @@
+/* ModalStyles.module.css */
+
+/* Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure overlay is on top */
+}
+
+/* Modal Content Box */
+.modalContent {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 650px; /* Max width */
+    max-height: 85vh; /* Max height */
+    overflow-y: auto; /* Enable scroll if content overflows */
+    position: relative; /* Needed for potential absolute elements inside */
+    outline: none; /* Remove default outline */
+}
+
+/* Modal Header */
+.modalHeader {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: flex; /* For aligning total marks */
+    justify-content: space-between; /* For aligning total marks */
+    align-items: baseline; /* Align text nicely */
+}
+
+.totalMarksHeader {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Space between form elements */
+}
+
+.label {
+    font-weight: 500;
+    margin-bottom: -10px; /* Pull label closer to input */
+    font-size: 14px;
+    color: #495057;
+}
+
+/* Input & Textarea Base Styles */
+.input,
+.textarea {
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%; /* Ensure they take full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical; /* Allow vertical resize only */
+    font-family: inherit; /* Use same font as inputs */
+}
+
+.inputError {
+    border-color: #dc3545; /* Red border for errors */
+}
+
+.inputError:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Red shadow on focus */
+}
+
+/* Modal Actions (Footer Buttons) */
+.modalActions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px; /* Space between buttons */
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
+/* Base Button Styles (Shared across modals) */
+.button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.buttonPrimary {
+    background-color: #007bff;
+    color: white;
+}
+
+.buttonPrimary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.buttonPrimary:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.buttonSecondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.buttonSecondary:hover {
+    background-color: #5a6268;
+    box-shadow: 0 2px 5px rgba(108, 117, 125, 0.3);
+}
+
+.buttonSecondary:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+.buttonCancel {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #ced4da;
+}
+
+.buttonCancel:hover {
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+.buttonCancel:disabled {
+     background-color: #e9ecef;
+     cursor: not-allowed;
+     opacity: 0.7;
+}
+
+
+/* Error Message Styling */
+.errorMessage {
+    color: #721c24; /* Dark red */
+    background-color: #f8d7da; /* Light red */
+    border: 1px solid #f5c6cb; /* Red border */
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-top: -5px; /* Adjust position relative to input */
+    margin-bottom: 5px;
+}
+
+
+/* --- Specific Styles for ViewSubmissionsModal --- */
+
+/* Adjust list item padding/margin if needed within the modal */
+.submissionItem {
+   padding: 12px 15px;
+   gap: 10px;
+}
+
+.studentIdentifier {
+    font-weight: 500;
+    color: #343a40;
+    flex-grow: 1;
+    margin-right: 10px; /* Space before buttons */
+    word-break: break-word;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px; /* Space between buttons in the group */
+    flex-shrink: 0; /* Prevent button group from shrinking */
+}
+
+/* Adjust action button padding if needed */
+.actionButton {
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.noSubmissionsMessage {
+    color: #6c757d;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f3f5;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Responsive adjustments for modals */
+@media (max-width: 700px) {
+    .modalContent {
+        padding: 20px;
+        max-width: 95%;
+    }
+    .modalHeader {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        flex-direction: column; /* Stack title and marks */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .modalActions {
+        margin-top: 25px;
+        padding-top: 15px;
+        gap: 8px;
+    }
+    .button {
+        padding: 9px 15px;
+        font-size: 13px;
+    }
+
+    /* Adjust submission item layout */
+    .submissionItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .studentIdentifier {
+        margin-bottom: 10px;
+    }
+    .buttonGroup {
+        width: 100%; /* Make button group full width */
+        justify-content: flex-end; /* Align buttons to the right */
+    }
+}
