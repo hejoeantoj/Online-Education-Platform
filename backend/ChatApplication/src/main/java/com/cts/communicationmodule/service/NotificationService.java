@@ -21,15 +21,11 @@ public class NotificationService {
         Notification notification = new Notification(message);
         Notification savedNotification = notificationDAO.save(notification);
         logger.info("Notification created successfully with ID: {}", savedNotification.getNotificationId());
-        //return savedNotification;
+       
     }
     
     
 
-//	public void createNewNotificationForCourse(String message,String courseId) {
-//		Notification notification=new Notification(message,courseId);
-//		Notification savedNotification=notificationDAO.save(notification);	
-//	}
     
     
     
@@ -42,10 +38,7 @@ public class NotificationService {
     }
     
     
-//    public List<Notification> getAllNotificationForCourse(String courseId){
-//    	List<Notification> notifications=notificationDAO.findByCourseId(courseId);
-//    	return notifications;
-//    }
+
 
 
 

@@ -9,11 +9,27 @@ public class InstructorCourseReportDTO {
 	private List<AssignmentReportDTO> assignmentReports;
 	 
 	private List<QuizReportDTO> quizReports;
+	
+	private String completedStatus;
 
 	
 	
 	
 	
+	/**
+	 * @return the completedStatus
+	 */
+	public String getCompletedStatus() {
+		return completedStatus;
+	}
+
+	/**
+	 * @param completedStatus the completedStatus to set
+	 */
+	public void setCompletedStatus(String completedStatus) {
+		this.completedStatus = completedStatus;
+	}
+
 	public String getStudentId() {
 		return studentId;
 	}

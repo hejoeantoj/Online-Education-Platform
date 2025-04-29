@@ -1,7 +1,7 @@
 package com.cts.coursemodule.enums;
-
-
-
+ 
+ 
+ 
 public enum Category {
     
 	TECHNOLOGY,
@@ -10,5 +10,12 @@ public enum Category {
     SCIENCE,
     HEALTH,
     LANGUAGE,
+    LAW,
+    FINANCEANDACCOUNTING,
+    PHOTOGRAPHY,
+    MUSIC,
+    MATH
+    
    
 }
+ 

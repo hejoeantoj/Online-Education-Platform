@@ -1,15 +1,11 @@
 package com.cts.usermodule.service;
 
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import javax.management.relation.Role;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -25,13 +21,13 @@ import io.jsonwebtoken.security.Keys;
 public class JWTService {
 	 private static final String secretkey = "12345678900987654321asdfghjkllkjhgfdsaqwertyuioppoiuytrewq";
 
-//	    public JWTService() {
-//	    }
+
 
 	    public String generateToken(String username, Roles role) {
 	        Map<String, Object> claims = new HashMap<>();
+	        
 	        claims.put("role", role.toString());
-	        //
+	     
 	        return Jwts.builder()
 	                .claims()
 	                .add(claims)
@@ -48,6 +44,8 @@ public class JWTService {
 	        byte[] keyBytes = Decoders.BASE64.decode(secretkey);
 	        return Keys.hmacShaKeyFor(keyBytes);
 	    }
+	    
+	    
 
 	    public String extractUserName(String token) {
 	        // extract the username from jwt token
@@ -81,7 +79,6 @@ public class JWTService {
 	    }
 
 		public String extractEmail(String token) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 

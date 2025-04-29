@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cts</groupId>
-	<artifactId>course-module</artifactId>
+	<artifactId>reports-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>course-module</name>
+	<name>reports-module</name>
 	<description>Online Educational Platform</description>
 	<url/>
 	<licenses>

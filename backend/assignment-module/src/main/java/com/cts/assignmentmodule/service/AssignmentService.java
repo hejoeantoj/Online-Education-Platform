@@ -131,6 +131,7 @@ public class AssignmentService {
      * Method to Delete an assignment by its ID 
      * if not exists id throws an Assignment not found exception
      */
+    
     public void deleteAssignment(AssignmentDTO assignmentDTO) throws AssignmentNotFoundException {
         if (!assignmentDao.existsById(assignmentDTO.getAssignmentId().toString())) {
             log.error("Assignment with ID: {} does not exist", assignmentDTO.getAssignmentId());

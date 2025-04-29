@@ -113,6 +113,8 @@ public class CourseController {
             return new ResponseEntity<>(response, HttpStatus.OK);
         
     }
+    
+    
 
     @PutMapping("/update")
     public ResponseEntity<ResultResponse<Course>> updateCourse(@Valid @RequestBody CourseDTO courseDTO) {

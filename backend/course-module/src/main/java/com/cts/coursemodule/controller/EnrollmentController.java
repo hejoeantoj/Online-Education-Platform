@@ -140,7 +140,6 @@ public class EnrollmentController {
      
      @GetMapping ("/studentList")
      public List<String> studentList(@RequestParam  String courseId){
-    	 System.out.println("ffffffffffff");
     	 return enrollmentService.studentList(courseId);
     	
      }

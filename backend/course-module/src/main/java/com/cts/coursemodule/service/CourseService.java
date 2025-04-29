@@ -40,7 +40,7 @@ public class CourseService {
      */
     
     
-    boolean checkInstructor(String instructorId) {
+    public boolean checkInstructor(String instructorId) {
     	return userClient.checkInstructor(instructorId);
     }
     

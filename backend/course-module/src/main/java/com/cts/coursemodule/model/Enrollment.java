@@ -66,6 +66,23 @@ public class Enrollment {
 
 	public void setDateOfEnrollment(LocalDate dateOfEnrollment) {
 		this.dateOfEnrollment = dateOfEnrollment;
+	}
+
+	public Enrollment(String enrollmentId, String studentId, Course course, LocalDate dateOfEnrollment) {
+		this.enrollmentId = enrollmentId;
+		this.studentId = studentId;
+		this.course = course;
+		this.dateOfEnrollment = dateOfEnrollment;
 	}	
+	
+	public Enrollment() {
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 }

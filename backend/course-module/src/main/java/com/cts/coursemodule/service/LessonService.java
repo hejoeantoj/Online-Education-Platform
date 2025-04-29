@@ -50,7 +50,7 @@ public class LessonService {
 		}
 		boolean lessonExists = lessonDAO.existsByCourseAndLessonTitle(course, lessonDTO.getLessonTitle());
 		if (lessonExists) {
-			throw new LessonAlreadyExistsException("Lesson with the same title already exists for this course");
+			throw new LessonAlreadyExistsException("Lesson with the same title already exists for this course"+lessonDTO.getLessonTitle()+"Alreday Exists");
 		}
 
 		Lesson newLesson = new Lesson();

@@ -15,13 +15,11 @@ import com.cts.coursemodule.model.Enrollment;
 public interface EnrollmentDAO extends JpaRepository<Enrollment, String> {
 	
 	 List<Enrollment> findByStudentId(String studentId);
-	 		    
-	 
+	 		    	 
 	 boolean existsByStudentIdAndCourse(String StudentId,Course course);
 
-	List<Enrollment> findAllByCourseCourseId(String courseId);
+	 List<Enrollment> findAllByCourseCourseId(String courseId);
 
-
-	Optional<Enrollment> findByStudentIdAndCourse_CourseId(String studentId, String courseId);
+	 Optional<Enrollment> findByStudentIdAndCourse_CourseId(String studentId, String courseId);
 
 }

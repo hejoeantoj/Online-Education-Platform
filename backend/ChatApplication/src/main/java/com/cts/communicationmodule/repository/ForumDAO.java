@@ -23,7 +23,7 @@ import org.springframework.data.repository.query.Param;
 import com.cts.communicationmodule.model.Forum;
  
 public interface ForumDAO extends JpaRepository<Forum, String> {
-   // List<Forum> findByCourseId(String courseId);
+   
     
     
 	 @Query("SELECT f FROM Forum f WHERE f.courseId = :courseId ORDER BY f.timestamp DESC")

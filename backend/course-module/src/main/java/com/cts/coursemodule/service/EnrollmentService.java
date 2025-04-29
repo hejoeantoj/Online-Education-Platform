@@ -41,7 +41,7 @@ public class EnrollmentService {
      * @return true if the student exists, false otherwise
      */
     
-    boolean checkStudent(String studentId) {
+    public boolean checkStudent(String studentId) {
     	return userClient.checkStudent(studentId);
     }
     

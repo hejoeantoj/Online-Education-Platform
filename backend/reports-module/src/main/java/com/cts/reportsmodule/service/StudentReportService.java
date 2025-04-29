@@ -92,7 +92,7 @@ public class StudentReportService {
 			QuizReportDTO quizDTO=new QuizReportDTO();
 			quizDTO.setQuizNumber(quizNumber++);
 			quizDTO.setMarks(mapData.get(quizId));
-			if(mapData.get(quizId)==null) {
+			if(mapData.get(quizId)==null || mapData.get(quizId) < 50.0) {
 				notCompleted++;
 				System.out.println(notCompleted);
 			}

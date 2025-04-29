@@ -36,11 +36,7 @@ public class NotificationController {
     }
     
     
-    
-//    @PostMapping("/create")
-//    public void createNewNotificationForCourse(@RequestParam String message,@RequestParam String courseId) {
-//         notificationService.createNewNotificationForCourse(message,courseId);
-//    }
+
 }
 
 
